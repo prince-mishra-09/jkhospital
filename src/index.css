@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #1D4ED8;
+  --royal-blue: #1E40AF;
+  --dark-navy: #0F172A;
+  --sky-ice: #F0F9FF;
+  --emergency-red: #DC2626;
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+  body {
+    color: #1E293B;
+    background-color: #FFFFFF;
+    font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #0F172A;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+}
+
+/* Keyboard Focus */
+:focus-visible {
+  outline: 3px solid #1D4ED8;
+  outline-offset: 3px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F0F9FF;
+}
+::-webkit-scrollbar-thumb {
+  background: #1D4ED8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1E40AF;
+}
+
+/* Marquee Animation */
+@keyframes marqueeScroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
